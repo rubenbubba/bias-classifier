@@ -81,6 +81,24 @@ tests/
   test_scrape.py, test_classify.py, demo_urls.txt
 ```
 
+## Running the demo (graders / reviewers)
+
+The repository ships with the **TF-IDF models pre-trained** (~3MB each, included in git) so the Streamlit app works immediately:
+
+```bash
+pip install -r requirements.txt
+python -m src.data.build_credibility_lookup   # only needs the small AllSides + MBFC files
+streamlit run app/streamlit_app.py
+```
+
+The RoBERTa weights are **not in git** — each checkpoint is ~479MB, too large for GitHub. If you want to compare RoBERTa or the ensemble against TF-IDF:
+
+1. Run `python -m src.data.download` and `python -m src.data.preprocess` (and `--split random`) locally to regenerate the parquet files.
+2. Open `notebooks/train_roberta_colab.ipynb` in Google Colab with a T4 GPU and run all cells (~60 min).
+3. Unzip the resulting `roberta_media.zip` and `roberta_random.zip` into the project root so you have `models/roberta_media/` and `models/roberta_random/`.
+
+The Streamlit sidebar auto-detects which backends are available and only offers the ones whose weights it can find.
+
 ## Notes and caveats
 
 - **English-only**: all training data is English (US political press). Pasting a non-English URL produces meaningless output.

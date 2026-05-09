@@ -6,14 +6,23 @@ __pycache__/
 venv/
 .env
 
-# Data and models (large, regeneratable)
+# Data (regeneratable from src/data/download.py)
 data/raw/
 data/processed/
-models/
-*.joblib
+
+# Large model weights (too big for git)
+models/distilbert/
+models/roberta_media/
+models/roberta_random/
 *.pt
 *.bin
 *.safetensors
+
+# Allow small TF-IDF models (~3MB each) so graders can run Streamlit out of the box
+!models/tfidf/
+!models/tfidf_random/
+!models/tfidf/*.joblib
+!models/tfidf_random/*.joblib
 
 # Streamlit
 .streamlit/secrets.toml
