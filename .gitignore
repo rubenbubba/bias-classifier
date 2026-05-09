@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Data and models (large, regeneratable)
+data/raw/
+data/processed/
+models/
+*.joblib
+*.pt
+*.bin
+*.safetensors
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Notebooks
+.ipynb_checkpoints/

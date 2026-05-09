@@ -1,0 +1,18 @@
+# A small set of articles across the spectrum, useful for live UI demos.
+# Lines starting with # are ignored. Replace with current URLs as needed.
+
+# Generally rated Center / High credibility
+https://apnews.com/article/politics
+https://www.reuters.com/world/us/
+
+# Generally rated Lean Left
+https://www.nytimes.com/section/politics
+https://www.washingtonpost.com/politics/
+
+# Generally rated Lean Right
+https://www.wsj.com/news/politics
+https://www.foxnews.com/politics
+
+# More polarized examples
+https://www.msnbc.com/politics
+https://www.dailywire.com/news
